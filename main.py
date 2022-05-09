@@ -1,7 +1,10 @@
 import PySimpleGUI as Gui
 
-layout = [[Gui.Button('Nuke everything!!!', size=(30, 4))]]
+from settings import WindowSettings
+from layouts import Start
 
-window = Gui.Window('Nuke Tool', layout, size=(620, 420))
+layout = Start().init
+
+window = Gui.Window(WindowSettings.title, layout, size=(WindowSettings.width, WindowSettings.height))
 
 event, values = window.read()
